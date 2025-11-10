@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
- import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 interface HeaderProps {
   firstId?: string | number; 
@@ -59,7 +59,7 @@ const openCasino = () => {
             <Link href="/login">Log In</Link>
           </nav>
 
-          {/* 🚀 Кнопка теперь ведёт на оффер */}
+       
           <button className="play-btn" onClick={openCasino}>
             Play Now
           </button>

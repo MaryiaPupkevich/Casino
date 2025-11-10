@@ -3,6 +3,7 @@
 import { use, useEffect, useState } from "react";
 import { getOffers } from "@/app/lib/api";
 import type { Offer } from "@/app/lib/api";
+import Header from "@/components/header";
 
 export default function CasinoRedirectPage({
   params,
@@ -59,6 +60,8 @@ export default function CasinoRedirectPage({
   }, [offers, offerId]);
 
   return (
+    <>
+    <Header />
     <main
       style={{
         minHeight: "calc(100vh - 96px)", 
@@ -71,19 +74,20 @@ export default function CasinoRedirectPage({
         gap: "12px",
       }}
     >
+      
       {error ? (
         <>
-          <h2>⚠️ Something went wrong</h2>
+          <h2>Something went wrong</h2>
           <p style={{ opacity: 0.8 }}>{error}</p>
         </>
       ) : (
         <Loader />
       )}
+      
     </main>
+    </>
   );
 }
-
-
 function Loader() {
   return (
     <div
